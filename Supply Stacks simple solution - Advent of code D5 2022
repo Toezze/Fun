@@ -1,0 +1,38 @@
+
+data = open(r"C:\Users\X\StackInstructions.txt","r")
+
+StackInstructions = data.read().split('\n')
+
+l1 = ["Q", "W", "P", "S", "Z", "R", "H", "D",]
+l2 = ["V", "B", "R", "W", "Q", "H","F"]
+l3 = ["C", "V", "S", "H"]
+l4 = ["H", "F", "G"]
+l5 = ["P","G","J","B","Z"]
+l6 = ["Q","T","J","H","W","F","L"]
+l7 = ["Z","T","W","D","L","V","J","N"]
+l8 = ["D","T","Z","C","J","G","H","F"]
+l9 = ["W","P","V","M","B","H"]
+
+for line in StackInstructions:
+    popped = []
+    
+    movements = line.split(" ")
+    del movements[::2]
+    
+    lists = {"1":l1, "2": l2, "3":l3, "4":l4, "5":l5, "6":l6, "7":l7, "8":l8, "9":l9}
+
+    for n in range(0,int(movements[0])):
+        popped.append(lists[movements[1]].pop(-1))
+        print("Popped!")
+
+    #The following line is the only line needed for part 2, remove for part 1 answer
+    popped.reverse()
+
+    lists[movements[-1]].extend(popped)
+    
+    #print lists for visual overview
+    
+    print(movements)
+
+print(f"Crate on top:\n{l1[-1]}{l2[-1]}{l3[-1]}{l4[-1]}{l5[-1]}{l6[-1]}{l7[-1]}{l8[-1]}{l9[-1]}")
+
