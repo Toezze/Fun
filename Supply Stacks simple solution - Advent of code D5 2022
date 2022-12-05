@@ -23,16 +23,13 @@ for line in StackInstructions:
 
     for n in range(0,int(movements[0])):
         popped.append(lists[movements[1]].pop(-1))
-        print("Popped!")
 
     #The following line is the only line needed for part 2, remove for part 1 answer
     popped.reverse()
 
     lists[movements[-1]].extend(popped)
     
-    #print lists for visual overview
-    
-    print(movements)
+    #print 'movements' for visual overview
 
 print(f"Crate on top:\n{l1[-1]}{l2[-1]}{l3[-1]}{l4[-1]}{l5[-1]}{l6[-1]}{l7[-1]}{l8[-1]}{l9[-1]}")
 
