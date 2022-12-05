@@ -1,4 +1,5 @@
 
+#python
 data = open(r"C:\Users\X\StackInstructions.txt","r")
 
 StackInstructions = data.read().split('\n')
